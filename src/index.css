@@ -1,6 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Underdog&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Asimovian&family=Underdog&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Autour+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Autour+One&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap");
 @import "tailwindcss";
 
 * {
-  font-family: 'Asimovian', sans-serif;
+  font-family: "Autour One", sans-serif;
+}
+
+.logo-go {
+  font-family: "Texturina", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: black;
+}
+
+.landing-page {
+  @apply overflow-y-auto h-screen;
+}
+
+.landing-page-content {
+  @apply overflow-visible;
+}
+
+.card-btn {
+  @apply flex items-center gap-3 text-[12px] font-medium text-gray-600 hover:text-green-600;
+}
+
+.add-btn {
+  @apply flex items-center gap-1.5 text-xs md:text-sm font-medium text-green-700;
+}
+
+.add-btn-fill {
+  @apply text-white bg-green-600;
 }
