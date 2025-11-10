@@ -1,4 +1,4 @@
-<img src="/public/logo.svg" alt="Alt Text" width="300" height="200">File Gremlin
+<img src="/public/logo.svg" alt="Alt Text" width="100" height="100">File Gremlin
 
 File Gremlin is meant to be a small-scale file storage application meant to recreate functionality for file storage and sharing provided by many other cloud providers, but free of charge. It's mainly for my own personal use but also meant as a personal open-source project for anyone that would like to spin up their own file storage service to circumvent high costs and storage caps by many file storage alternatives.
 
