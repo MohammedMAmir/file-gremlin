@@ -4,7 +4,7 @@
 @import "tailwindcss";
 
 * {
-  font-family: "Autour One", sans-serif;
+  font-family: "Texturina", sans-serif;
 }
 
 .logo-go {
@@ -16,6 +16,10 @@
 
 .landing-page {
   @apply overflow-y-auto h-screen;
+  font-family: "Texturina", serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: capitalize;
 }
 
 .landing-page-content {
