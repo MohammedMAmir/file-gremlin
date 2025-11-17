@@ -1,25 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Asimovian&family=Underdog&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Autour+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Autour+One&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap");
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Underdog&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import 'tailwindcss';
 
-* {
-  font-family: "Texturina", sans-serif;
+@theme {
+  --color-main-50: oklch(98.4% 0.014 180.72);
+  --color-main-100: oklch(95.3% 0.051 180.801)
+    --color-main-200: oklch(91% 0.096 180.426);
+  --color-main-300: oklch(85.5% 0.138 181.071)
+    --color-main-400: oklch(85.5% 0.138 181.071);
+  --color-main-500: oklch(70.4% 0.14 182.503);
+  --color-main-600: oklch(60% 0.118 184.704);
+  --color-main-700: oklch(51.1% 0.096 186.391);
+  --color-main-800: oklch(43.7% 0.078 188.216);
+  --color-secondary-50: oklch(97.9% 0.021 166.113);
+  --color-secondary-100: oklch(95% 0.052 163.051);
+  --color-secondary-200: oklch(90.5% 0.093 164.15);
+  --color-secondary-300: oklch(84.5% 0.143 164.978);
+  --color-secondary-400: oklch(76.5% 0.177 163.223);
+  --color-secondary-500: oklch(69.6% 0.17 162.48);
+  --color-secondary-600: oklch(59.6% 0.145 163.225);
 }
 
-.logo-go {
-  font-family: "Texturina", serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  font-style: black;
+* {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.logo-light {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.logo-bold {
+  font-family: 'Silkscreen', sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .landing-page {
-  @apply overflow-y-auto h-screen;
-  font-family: "Texturina", serif;
+  @apply h-screen overflow-y-auto;
+  font-family: 'Asimovian', serif;
   font-weight: 400;
   font-size: 20px;
-  text-transform: capitalize;
 }
 
 .landing-page-content {
@@ -31,9 +56,26 @@
 }
 
 .add-btn {
-  @apply flex items-center gap-1.5 text-xs md:text-sm font-medium text-green-700;
+  @apply flex items-center gap-1.5 text-xs font-medium text-green-700 md:text-sm;
 }
 
 .add-btn-fill {
-  @apply text-white bg-green-600;
+  @apply bg-green-600 text-white;
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+  transition: transform 0.01s;
+}
+
+.rotate135 {
+  transform: rotate(135deg);
+}
+
+.rotate270 {
+  transform: rotate(270deg);
+}
+
+.bottom-left {
+  transition: scale(1.5) translateX(-100px) opacity(1) 0.3s ease-in-out;
 }

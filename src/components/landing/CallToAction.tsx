@@ -1,6 +1,6 @@
 const CallToAction = () => {
     return (
-        <div>CallToAction</div>
+        <div>CALL TO ACTION</div>
     )
 }
 
