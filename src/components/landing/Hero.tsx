@@ -1,15 +1,39 @@
-import { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const Hero = () => {
-  const [index, setIndex] = useState(0)
+  const [registerIndex, setRegisterIndex] = useState(0)
+  const [signIndex, setSignIndex] = useState(0)
 
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay))
+  const gremlinTranslationsRegister: string[] = [
+    'top-2 left-4 group-hover:-translate-y-15 group-hover:scale-150',
+    'top-1 left-3 rotate-225 group-hover:translate-y-10 group-hover:-translate-x-10 group-hover:scale-150',
+    'top-6 left-10 rotate-180 group-hover:translate-y-10 group-hover:scale-150',
+    'top-6 left-20 rotate-180 group-hover:translate-y-10 group-hover:scale-150',
+    'top-2 left-20 group-hover:-translate-y-15 group-hover:scale-150',
+    'top-2 left-2 rotate-315 group-hover:-translate-y-10 group-hover:-translate-x-10 group-hover:scale-150',
+    'top-2 left-24 rotate-45 group-hover:-translate-y-10 group-hover:translate-x-10 group-hover:scale-150',
+    'top-2 left-24 rotate-135 group-hover:translate-y-10 group-hover:translate-x-10 group-hover:scale-150',
+  ]
+
+  const gremlinTranslationsSign: string[] = [
+    'top-2 left-4 group-hover:-translate-y-15 group-hover:scale-150',
+    'top-1 left-3 rotate-225 group-hover:translate-y-10 group-hover:-translate-x-10 group-hover:scale-150',
+    'top-6 left-10 rotate-180 group-hover:translate-y-10 group-hover:scale-150',
+    'top-6 left-20 rotate-180 group-hover:translate-y-10 group-hover:scale-150',
+    'top-2 left-20 group-hover:-translate-y-15 group-hover:scale-150',
+    'top-2 left-2 rotate-315 group-hover:-translate-y-10 group-hover:-translate-x-10 group-hover:scale-150',
+    'top-2 left-22 rotate-45 group-hover:-translate-y-10 group-hover:translate-x-10 group-hover:scale-150',
+    'top-2 left-22 rotate-135 group-hover:translate-y-10 group-hover:translate-x-10 group-hover:scale-150',
+  ]
+
+  async function handleMouseEnterRegister() {
+    setRegisterIndex(
+      Math.floor(Math.random() * gremlinTranslationsRegister.length)
+    )
   }
 
-  async function handleMouseLeaveRegister() {
-    await timeout(3000)
-    setIndex(Math.floor(Math.random() * gremlinTranslationsRegister.length))
+  async function handleMouseEnterSign() {
+    setSignIndex(Math.floor(Math.random() * gremlinTranslationsSign.length))
   }
 
   return (
@@ -35,30 +59,48 @@ const Hero = () => {
             <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 md:gap-8">
               <div
                 className="group relative h-20"
-                onMouseLeave={handleMouseLeaveRegister}
+                onMouseEnter={handleMouseEnterRegister}
               >
                 <button className="logo-bold hover:bg-main-500 relative z-0 h-14 rounded-full bg-black px-5 py-3 text-base text-white sm:text-lg md:h-15">
                   Register
                 </button>
-                <img
-                  className={`absolute inset-0 top-2 left-4 -z-10 h-12 w-12 opacity-0 transition-all duration-400 ease-in-out group-hover:-translate-y-15 group-hover:scale-150 group-hover:opacity-100`}
-                  src="public/logo.svg"
-                ></img>
+                {gremlinTranslationsRegister.map((item, i) => (
+                  <div
+                    key={i}
+                    className={
+                      `absolute inset-0 -z-10 h-12 w-12 opacity-0 transition-all duration-400 ease-in-out ` +
+                      item +
+                      (registerIndex == i ? ' group-hover:opacity-100' : '')
+                    }
+                  >
+                    <img className="object-fit" src="public/logo.svg"></img>
+                  </div>
+                ))}
               </div>
-              <div className="group relative h-20">
+              <div
+                className="group relative h-20"
+                onMouseEnter={handleMouseEnterSign}
+              >
                 <button className="logo-bold b-main-200 text-main-500 hover:bg-main-500 bg-main-50 relative z-0 h-14 rounded-full border-3 border-gray-500 px-5 py-3 text-base hover:border-transparent hover:text-white sm:text-lg md:h-15">
                   Sign In
                 </button>
-                <img
-                  className={`absolute inset-0 top-2 left-20 -z-10 h-12 w-12 rotate-135 opacity-0 transition-all duration-400 ease-in-out group-hover:translate-x-10 group-hover:translate-y-10 group-hover:scale-150 group-hover:opacity-100`}
-                  src="public/logo.svg"
-                ></img>
+                {gremlinTranslationsSign.map((item, i) => (
+                  <div
+                    key={i}
+                    className={
+                      `absolute inset-0 -z-10 h-12 w-12 opacity-0 transition-all duration-400 ease-in-out ` +
+                      item +
+                      (signIndex == i ? ' group-hover:opacity-100' : '')
+                    }
+                  >
+                    <img className="object-fit" src="public/logo.svg"></img>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
         <div className="relative"></div>
-
         <div className="mt-8 text-center"></div>
       </div>
     </div>
@@ -66,3 +108,8 @@ const Hero = () => {
 }
 
 export default Hero
+
+interface Gremlin {
+  initialClass: string // The initial html to be rendered for the gremlin image (location, rotation)
+  hoverTransition: string // The css for the gremlins transition animation on hover
+}
