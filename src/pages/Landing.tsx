@@ -3,6 +3,7 @@ import Features from "../components/landing/Features";
 import Footer from "../components/landing/Footer";
 import Hero from "../components/landing/Hero";
 import Pricing from "../components/landing/Pricing";
+import { features } from "../assets/data";
 
 const Landing = () => {
     return (
@@ -11,7 +12,7 @@ const Landing = () => {
             <Hero />
 
             {/* Features Section*/}
-            <Features />
+            <Features features={features}/>
 
             {/* Pricing Section*/}
             <Pricing />

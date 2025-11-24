@@ -57,7 +57,7 @@ const Hero = () => {
                             handle the rest.
                         </p>
                     </div>
-                    <div className="sm:mx-w-none align-center mx-auto mt-15 h-20 max-w-sm sm:flex sm:justify-center">
+                    <div className="sm:mx-w-none align-center mx-auto mt-15 h-14 max-w-sm sm:flex sm:justify-center">
                         <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 md:gap-8">
                             <div
                                 className="group relative h-20"
@@ -84,7 +84,7 @@ const Hero = () => {
                                 className="group relative h-20"
                                 onMouseEnter={handleMouseEnterSign}
                             >
-                                <button className="logo-bold shadow-lg hover:shadow-xl b-main-200 text-main-500 hover:bg-main-500 bg-main-50 relative z-0 h-14 rounded-full border-3 border-gray-500 px-5 py-3 text-base hover:border-transparent hover:text-white sm:text-lg md:h-15">
+                                <button className="logo-bold shadow-lg hover:shadow-xl b-main-200 text-main-500 hover:bg-main-500 bg-main-50 relative z-0 h-10 rounded-full border-3 border-gray-500 px-5 py-3 text-base hover:border-transparent hover:text-white sm:text-lg md:h-15">
                                     Sign In
                                 </button>
                                 {gremlinTranslationsSign.map((item, i) => (
@@ -108,16 +108,17 @@ const Hero = () => {
                     <div className="aspect-w-16 rounded-lg shadow-xl overflow-hidden">
                         <img src="src/assets/pegasus-dungeon-soup.png" alt="filegremlin dashboard" className="w-full h-full object-cover" />
                     </div>
+                    <div className="absolute inset-0 bg-linear-to-t from-black opacity-10 rounded-lg">
+                    </div>
                 </div>
-                <div className="mt-8 text-center"></div>
+                <div className="mt-8 text-center">
+                    <p className="mt-4 pb-4 text-base text-gray-500">
+                        All your files are encrypted and stored securely with enterprise-grade security protocols.
+                    </p>
+                </div>
             </div>
         </div>
     )
 }
 
 export default Hero
-
-interface Gremlin {
-    initialClass: string // The initial html to be rendered for the gremlin image (location, rotation)
-    hoverTransition: string // The css for the gremlins transition animation on hover
-}
