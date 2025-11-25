@@ -1,3 +1,6 @@
+/**
+ * This object contains all of the features offered by FileGremlin and displayed on the features page
+ */
 export const features: Feature[] = [
     {
         iconName: "ArrowUpCirlce",
@@ -37,9 +40,29 @@ export const features: Feature[] = [
     }
 ];
 
+export const pricingPlans: PricingPlan[] = [
+    {
+        highlighted: false,
+        name: "Free"
+    },
+    {
+        highlighted: true,
+        name: "Pro"
+    },
+    {
+        highlighted: false,
+        name: "Premium"
+    },
+];
+
 export interface Feature {
-    iconName: string,
-    iconColor: string,
-    title: string,
-    description: string
+    iconName: string,                           // The lucide icon used to represent this feature
+    iconColor: string,                          // The color of the icon to import
+    title: string,                              // The title of the feature
+    description: string                         // The description of the feature
+}
+
+export interface PricingPlan {
+    highlighted: boolean,                       // Whether the current pricing plan is currently highlighted or not
+    name: string                                // The name of the current pricing plan
 }

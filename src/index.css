@@ -7,8 +7,8 @@
 
 @theme {
   --color-main-50: oklch(98.4% 0.014 180.72);
-  --color-main-100: oklch(95.3% 0.051 180.801)
-  --color-main-200: oklch(91% 0.096 180.426);
+  --color-main-100: oklch(92.3% 0.14 182.500);
+  --color-main-200: oklch(88% 0.14 182.503 / 88%);
   --color-main-300: oklch(83.4% 0.14 182.503 / 90%);
   --color-main-400: oklch(79.4% 0.14 182.503);
   --color-main-500: oklch(70.4% 0.14 182.503);
