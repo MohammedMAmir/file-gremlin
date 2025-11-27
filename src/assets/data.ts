@@ -43,15 +43,51 @@ export const features: Feature[] = [
 export const pricingPlans: PricingPlan[] = [
     {
         highlighted: false,
-        name: "Free"
+        name: "Free",
+        description: "Perfect for starters wanting to demo the product",
+        price: {
+            amount: 0,
+            curr: 'CAD'
+        },
+        features: [
+            '5 file uploads',
+            'Basic file sharing',
+            '7-day file retention',
+            'Email support'
+        ]
     },
     {
         highlighted: true,
-        name: "Pro"
+        name: "Pro",
+        description: "Designed for individuals with larger file storage needs",
+        price: {
+            amount: 2,
+            curr: 'CAD'
+        },
+        features: [
+            '500 file uploads',
+            'Advanced file sharing',
+            '30-day file retention',
+            'Priority email support',
+            'File analytics'
+        ]
     },
     {
         highlighted: false,
-        name: "Premium"
+        name: "Premium",
+        description: "For teams and businesses who want to unleash their gremlin and store unlimited files",
+        price: {
+            amount: 5,
+            curr: 'CAD'
+        },
+        features: [
+            '5000 file uploads',
+            'Team sharing capability',
+            'Unlimited file retention',
+            '24/7 priority support',
+            'Advanced analytics',
+            'API access'
+        ]
     },
 ];
 
@@ -64,5 +100,13 @@ export interface Feature {
 
 export interface PricingPlan {
     highlighted: boolean,                       // Whether the current pricing plan is currently highlighted or not
-    name: string                                // The name of the current pricing plan
+    name: string,                               // The name of the current pricing plan
+    description: string                         // Description of the pricing plan
+    price: Price                                // Price of the current pricing plan
+    features: string[]                          // A list of features for this specific plan
+}
+
+export interface Price {
+    amount: number,                             // The numerical price
+    curr: string                                // The currency of the price
 }

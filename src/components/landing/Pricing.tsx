@@ -1,48 +1,59 @@
-import type { PricingPlan } from "../../assets/data"
+import { Check } from 'lucide-react';
+import type { PricingPlan } from '../../assets/data';
 
 interface PricingProps {
-    pricingPlans: PricingPlan[]
+  pricingPlans: PricingPlan[];
 }
 
-const Pricing: React.FC<PricingProps> = ({pricingPlans}) => {
+const Pricing: React.FC<PricingProps> = ({ pricingPlans }) => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
+    <div className="bg-gray-50 py-20">
+      <div className="mx-auto my-12 max-w-7xl px-14 sm:px-16 lg:px-8">
         <div className="text-center">
-            <h2 className="pixelated text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                Simple, Transparent Pricing
-            </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-                Choose the plan that's right for you
-            </p>
+          <h2 className="pixelated text-3xl font-extrabold text-gray-900 sm:text-4xl">Simple, Transparent Pricing</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-xl text-gray-500">Choose the plan that's right for you</p>
         </div>
 
-        <div className="mt-16 space-y-12 lg:space-y-0 lg:grid-cols-3 lg:gap-8">
-            {pricingPlans.map((plan, index) => (
-                <div key={index} className={`flex flex-col rounded-lg shadow-lg overflow-hidden 
-                    ${plan.highlighted ? 'border-2 border-main-500 transform-scale-105' : 'border border-gray-200'}`}>
-                        <div className={`px-6 py-8 bg-white ${plan.highlighted ? 'bg-linear-to-br from-main-50 to-white' : ''}`}>
-                            <div className="flex justify-between item-center">
-                                <h3 className="text-2xl font-medium text-gray-900">
-                                    {plan.name}
-                                </h3>
-                                {plan.highlighted && (
-                                    <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-main-200 text-main-800">
-                                        Popular
-                                    </span>
-                                ) }
-                            </div>
-                            <p className="mt-4 text-sm text-gray-500">
-
-                            </p>
-                            <p className="mt-8">
-
-                            </p>
-                        </div>
+        <div className="mt-16 space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
+          {pricingPlans.map((plan, index) => (
+            <div
+              key={index}
+              className={`flex flex-col overflow-hidden rounded-lg shadow-lg ${plan.highlighted ? 'border-main-500 scale-105 transform border-2' : 'border border-gray-200'}`}>
+              <div className={`bg-white px-6 py-8 ${plan.highlighted ? 'from-main-50 bg-linear-to-br to-white' : ''}`}>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-2xl font-medium text-gray-900">{plan.name}</h3>
+                  {plan.highlighted && (
+                    <span className="bg-main-200 text-main-800 inline-flex items-center rounded-full px-3 py-0.5 text-sm font-medium">
+                      Popular
+                    </span>
+                  )}
                 </div>
-            ))}
+                <p className="text-md mt-4 text-gray-500">{plan.description}</p>
+                <p className="mt-8">
+                  {Intl.NumberFormat('en-US', { style: 'currency', currency: plan.price.curr }).format(
+                    plan.price.amount,
+                  )}
+                </p>
+              </div>
+              <div className="jusitfy-between flex flex-1 flex-col space-y-6 bg-gray-50 px-6 pt-6 pb-8">
+                <ul className="space-y-4">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start">
+                      <div className="shrink-0">
+                        <Check className="text-main-500 h-5 w-5"></Check>
+                      </div>
+                      <p className="ml-3 text-base text-gray-700">{feature}</p>
+                    </li>
+                  ))}
+                </ul>
+                <div className="rounded-md shadow"></div>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Pricing
+export default Pricing;
