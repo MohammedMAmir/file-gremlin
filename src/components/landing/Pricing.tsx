@@ -21,7 +21,7 @@ const Pricing: React.FC<PricingProps> = ({ pricingPlans }) => {
               className={`flex flex-col overflow-hidden rounded-lg shadow-lg ${plan.highlighted ? 'border-main-500 scale-105 transform border-2' : 'border border-gray-200'}`}>
               <div className={`bg-white px-6 py-8 ${plan.highlighted ? 'from-main-50 bg-linear-to-br to-white' : ''}`}>
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-medium text-gray-900">{plan.name}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">{plan.name}</h3>
                   {plan.highlighted && (
                     <span className="bg-main-200 text-main-800 inline-flex items-center rounded-full px-3 py-0.5 text-sm font-medium">
                       Popular
@@ -29,10 +29,13 @@ const Pricing: React.FC<PricingProps> = ({ pricingPlans }) => {
                   )}
                 </div>
                 <p className="text-md mt-4 text-gray-500">{plan.description}</p>
-                <p className="mt-8">
-                  {Intl.NumberFormat('en-US', { style: 'currency', currency: plan.price.curr }).format(
-                    plan.price.amount,
-                  )}
+                <p className="mt-8 inline-flex items-end-safe gap-2">
+                  <span className="text-4xl font-extrabold text-gray-900">
+                    {Intl.NumberFormat('en-US', { style: 'currency', currency: plan.price.curr }).format(
+                      plan.price.amount,
+                    )}{' '}
+                  </span>
+                  <p className="text-md">/ month</p>
                 </p>
               </div>
               <div className="jusitfy-between flex flex-1 flex-col space-y-6 bg-gray-50 px-6 pt-6 pb-8">
@@ -46,7 +49,16 @@ const Pricing: React.FC<PricingProps> = ({ pricingPlans }) => {
                     </li>
                   ))}
                 </ul>
-                <div className="rounded-md shadow"></div>
+                <div className="rounded-md shadow">
+                  <button
+                    className={`pixelated flex w-full items-center justify-center rounded-md border border-transparent px-5 py-3 font-medium ${
+                      plan.highlighted
+                        ? 'bg-main-500 hover:bg-main-600 text-white'
+                        : 'text-main-600 hover:border-main-500 bg-white hover:bg-gray-50'
+                    } transition-colors duration-200`}>
+                    {plan.cta}
+                  </button>
+                </div>
               </div>
             </div>
           ))}

@@ -54,7 +54,8 @@ export const pricingPlans: PricingPlan[] = [
             'Basic file sharing',
             '7-day file retention',
             'Email support'
-        ]
+        ],
+        cta: "Get Started"
     },
     {
         highlighted: true,
@@ -69,8 +70,9 @@ export const pricingPlans: PricingPlan[] = [
             'Advanced file sharing',
             '30-day file retention',
             'Priority email support',
-            'File analytics'
-        ]
+            'File analytics',
+        ],
+        cta: "Go Pro Gremlin"
     },
     {
         highlighted: false,
@@ -87,7 +89,8 @@ export const pricingPlans: PricingPlan[] = [
             '24/7 priority support',
             'Advanced analytics',
             'API access'
-        ]
+        ],
+        cta: "Get A Premium Gremlin"
     },
 ];
 
@@ -104,6 +107,7 @@ export interface PricingPlan {
     description: string                         // Description of the pricing plan
     price: Price                                // Price of the current pricing plan
     features: string[]                          // A list of features for this specific plan
+    cta: string                                 // Call to action to display in button
 }
 
 export interface Price {

@@ -1,6 +1,12 @@
+import { useClerk } from '@clerk/clerk-react';
 import { useState } from 'react';
 
-const Hero = () => {
+interface HeroProps {
+  openSignIn: any;
+  openSignUp: any;
+}
+
+const Hero: React.FC<HeroProps> = ({ openSignIn: openSignIn, openSignUp: openSignUp }) => {
   const [registerIndex, setRegisterIndex] = useState(0);
   const [signIndex, setSignIndex] = useState(0);
 
@@ -55,7 +61,9 @@ const Hero = () => {
           <div className="sm:mx-w-none align-center mx-auto mt-15 h-14 max-w-sm sm:flex sm:justify-center">
             <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 md:gap-8">
               <div className="group relative h-20" onMouseEnter={handleMouseEnterRegister}>
-                <button className="logo-bold hover:bg-main-500 relative z-0 h-14 rounded-full bg-black px-5 py-3 text-base text-white shadow-lg hover:shadow-xl sm:text-lg md:h-15">
+                <button
+                  className="logo-bold hover:bg-main-500 relative z-0 h-14 rounded-full bg-black px-5 py-3 text-base text-white shadow-lg hover:shadow-xl sm:text-lg md:h-15"
+                  onClick={() => openSignUp()}>
                   Register
                 </button>
                 {gremlinTranslationsRegister.map((item, i) => (
@@ -70,7 +78,9 @@ const Hero = () => {
                 ))}
               </div>
               <div className="group relative h-20" onMouseEnter={handleMouseEnterSign}>
-                <button className="logo-bold b-main-200 text-main-500 hover:bg-main-500 bg-main-50 relative z-0 h-10 rounded-full border-3 border-gray-500 px-5 py-3 text-base shadow-lg hover:border-transparent hover:text-white hover:shadow-xl sm:text-lg md:h-15">
+                <button
+                  className="logo-bold b-main-200 text-main-500 hover:bg-main-500 bg-main-50 relative z-0 h-10 rounded-full border-3 border-gray-500 px-5 py-3 text-base shadow-lg hover:border-transparent hover:text-white hover:shadow-xl sm:text-lg md:h-15"
+                  onClick={() => openSignIn()}>
                   Sign In
                 </button>
                 {gremlinTranslationsSign.map((item, i) => (
