@@ -6,11 +6,18 @@ import Pricing from '../components/landing/Pricing';
 import { features, pricingPlans } from '../assets/data';
 import { useClerk, useUser } from '@clerk/clerk-react';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Landing = () => {
   const { openSignIn, openSignUp } = useClerk();
   const { isSignedIn } = useUser();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isSignedIn) {
+      navigate('/dashboard');
+    }
+  }, [isSignedIn, navigate]);
 
   return (
     <div className="landing-page bg-linear-to-b from-gray-50 to-gray-100 text-xs">
@@ -21,10 +28,10 @@ const Landing = () => {
       <Features features={features} />
 
       {/* Pricing Section*/}
-      <Pricing pricingPlans={pricingPlans} />
+      <Pricing pricingPlans={pricingPlans} openSignUp={openSignUp} />
 
       {/* CTA Section*/}
-      <CallToAction />
+      <CallToAction openSignUp={openSignUp} />
 
       {/* Footer Section*/}
       <Footer />

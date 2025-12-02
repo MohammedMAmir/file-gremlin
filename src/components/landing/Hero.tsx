@@ -1,4 +1,3 @@
-import { useClerk } from '@clerk/clerk-react';
 import { useState } from 'react';
 
 interface HeroProps {
@@ -58,11 +57,11 @@ const Hero: React.FC<HeroProps> = ({ openSignIn: openSignIn, openSignUp: openSig
               Upload, manage, and share files anywhere, anytime. Let the gremlin handle the rest.
             </p>
           </div>
-          <div className="sm:mx-w-none align-center mx-auto mt-15 h-14 max-w-sm sm:flex sm:justify-center">
-            <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 md:gap-8">
+          <div className="sm:mx-w-none align-center mx-auto mt-15 flex h-14 max-w-sm justify-center">
+            <div className="mx-auto inline-grid grid-cols-2 justify-center gap-6 space-y-4 sm:space-y-0 md:gap-8">
               <div className="group relative h-20" onMouseEnter={handleMouseEnterRegister}>
                 <button
-                  className="logo-bold hover:bg-main-500 relative z-0 h-14 rounded-full bg-black px-5 py-3 text-base text-white shadow-lg hover:shadow-xl sm:text-lg md:h-15"
+                  className="logo-bold hover:bg-main-500 relative z-0 h-14 rounded-full bg-black px-5 py-3 text-base text-white shadow-lg shadow-gray-400 hover:shadow-xl sm:text-lg md:h-15"
                   onClick={() => openSignUp()}>
                   Register
                 </button>
@@ -79,7 +78,7 @@ const Hero: React.FC<HeroProps> = ({ openSignIn: openSignIn, openSignUp: openSig
               </div>
               <div className="group relative h-20" onMouseEnter={handleMouseEnterSign}>
                 <button
-                  className="logo-bold b-main-200 text-main-500 hover:bg-main-500 bg-main-50 relative z-0 h-10 rounded-full border-3 border-gray-500 px-5 py-3 text-base shadow-lg hover:border-transparent hover:text-white hover:shadow-xl sm:text-lg md:h-15"
+                  className="logo-bold b-main-200 text-main-500 hover:bg-main-500 bg-main-50 relative z-0 h-14 rounded-full border-3 border-gray-500 px-5 py-3 text-base shadow-lg shadow-gray-400 hover:border-transparent hover:text-white hover:shadow-xl sm:text-lg md:h-15"
                   onClick={() => openSignIn()}>
                   Sign In
                 </button>

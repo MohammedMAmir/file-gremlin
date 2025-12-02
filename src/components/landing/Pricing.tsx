@@ -3,9 +3,10 @@ import type { PricingPlan } from '../../assets/data';
 
 interface PricingProps {
   pricingPlans: PricingPlan[];
+  openSignUp: any;
 }
 
-const Pricing: React.FC<PricingProps> = ({ pricingPlans }) => {
+const Pricing: React.FC<PricingProps> = ({ pricingPlans, openSignUp }) => {
   return (
     <div className="bg-gray-50 py-20">
       <div className="mx-auto my-12 max-w-7xl px-14 sm:px-16 lg:px-8">
@@ -51,6 +52,7 @@ const Pricing: React.FC<PricingProps> = ({ pricingPlans }) => {
                 </ul>
                 <div className="rounded-md shadow">
                   <button
+                    onClick={() => openSignUp()}
                     className={`pixelated flex w-full items-center justify-center rounded-md border border-transparent px-5 py-3 font-medium ${
                       plan.highlighted
                         ? 'bg-main-500 hover:bg-main-600 text-white'

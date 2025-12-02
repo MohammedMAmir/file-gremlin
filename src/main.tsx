@@ -11,7 +11,13 @@ if (!clerkPubKey) {
 }
 
 createRoot(document.getElementById('root')!).render(
-  <ClerkProvider publishableKey={clerkPubKey}>
+  <ClerkProvider
+    publishableKey={clerkPubKey}
+    appearance={{
+      layout: {
+        logoImageUrl: 'public/fileGremlinLogo.png',
+      },
+    }}>
     <App />
   </ClerkProvider>,
 );
