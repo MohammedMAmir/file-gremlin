@@ -4,37 +4,37 @@
 export const features: Feature[] = [
     {
         iconName: "ArrowUpCirlce",
-        iconColor: "text-black-500",
+        iconColor: "text-gray-100",
         title: "Easy File Upload",
         description: "Quickly upload your files with our intuitive drag-and-drop interface."
     },
     {
         iconName: "Shield",
-        iconColor: "text-black-500",
+        iconColor: "text-gray-100",
         title: "Secure Storage",
         description: "Your file are encrypted and stored securely in our cloud infrastructure."
     },
     {
         iconName: "Share2",
-        iconColor: "text-black-500",
+        iconColor: "text-gray-100",
         title: "Simple Sharing",
         description: "Share files with anyone using secure links that you control."
     },
     {
         iconName: "CreditCard",
-        iconColor: "text-black-500",
+        iconColor: "text-gray-100",
         title: "Flexible Credits",
         description: "Pay only for what you use with our credit-based system."
     },
     {
         iconName: "FileText",
-        iconColor: "text-black-500",
+        iconColor: "text-gray-100",
         title: "File Management",
         description: "Organize, preview, and manage your files from any device."
     },
     {
         iconName: "Clock",
-        iconColor: "text-black-500",
+        iconColor: "text-gray-100",
         title: "Transaction History",
         description: "Keep track of all your credit purchase and usage."
     }
@@ -90,7 +90,7 @@ export const pricingPlans: PricingPlan[] = [
             'Advanced analytics',
             'API access'
         ],
-        cta: "Get A Premium Gremlin"
+        cta: "Get Gremlin Premium"
     },
 ];
 

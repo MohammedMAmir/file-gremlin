@@ -28,11 +28,11 @@ const Features: React.FC<FeaturesProps> = ({ features }) => {
   };
 
   return (
-    <div className="bg-white py-12">
+    <div className="bg-gray-700 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="pixelated text-3xl font-extrabold text-gray-900 sm:text-4xl">All your file sharing needs!</h2>
-          <p className="mx-w-2xl mx-auto mt-4 text-xl text-gray-500">
+          <h2 className="pixelated text-3xl font-extrabold text-gray-50 sm:text-4xl">All your file sharing needs!</h2>
+          <p className="mx-w-2xl mx-auto mt-4 text-xl text-teal-400">
             FileGremlin provides all the tools you need to manage your digital content
           </p>
         </div>
@@ -41,17 +41,17 @@ const Features: React.FC<FeaturesProps> = ({ features }) => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="hover:shadow-main-300 rounded-lg border border-gray-100 bg-zinc-50 pt-5 shadow-md transition-shadow duration-300 hover:shadow-lg">
+                className="hover:shadow-main-300 rounded-lg border border-gray-900 bg-gray-500 pt-5 shadow-md transition-shadow duration-300 hover:shadow-lg">
                 <div className="bg-gray flow-root rounded-lg px-6 pb-8">
                   <div className="grid h-full w-full grid-cols-3 items-center gap-5">
                     <div className="col-span-1 inline-flex h-full w-full items-center justify-center rounded-md p-4">
                       {renderIcon(feature.iconName, feature.iconColor)}
                     </div>
                     <div className="col-span-2">
-                      <h3 className="font bold text-main-500 pixelated text-xl leading-6 tracking-tight">
+                      <h3 className="font bold pixelated text-xl leading-6 tracking-tight text-gray-900">
                         {feature.title}
                       </h3>
-                      <p className="mt-2 text-base text-gray-500">{feature.description}</p>
+                      <p className="text-gray-70 mt-2 text-gray-200">{feature.description}</p>
                     </div>
                   </div>
                 </div>

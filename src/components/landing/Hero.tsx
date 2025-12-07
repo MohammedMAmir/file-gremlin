@@ -43,17 +43,17 @@ const Hero: React.FC<HeroProps> = ({ openSignIn: openSignIn, openSignUp: openSig
 
   return (
     <div className="landing-page-content relative">
-      <div className="from-secondary-50 to-main-50 pointer-events-none absolute inset-0 z-0 bg-linear-to-r opacity-80"></div>
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[url(src/assets/background.jpg)] bg-cover"></div>
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="pt-20 pb-16 sm:pt-16 sm:pb-20 lg:pt-12 lg:pb-28">
           <div className="text-center">
-            <h1 className="text-1xl font-normal tracking-tight text-gray-500 sm:text-2xl md:text-3xl">
+            <h1 className="text-1xl font-normal tracking-tight text-gray-200 text-shadow-gray-800 text-shadow-md sm:text-2xl md:text-3xl">
               <span className="block">Share files securely through the cloud with your</span>
-              <p className="logo-bold block text-5xl text-black sm:text-6xl md:text-7xl">
+              <p className="logo-bold block text-5xl text-gray-100 sm:text-6xl md:text-7xl">
                 FILE<span className="logo-bold text-main-500">GREMLIN</span>
               </p>
             </h1>
-            <p className="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-base md:mt-3 md:max-w-3xl md:text-lg">
+            <p className="text-shadow-xl mx-auto mt-3 max-w-md text-base font-medium text-gray-200 sm:text-base md:mt-3 md:max-w-3xl md:text-lg">
               Upload, manage, and share files anywhere, anytime. Let the gremlin handle the rest.
             </p>
           </div>
@@ -61,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({ openSignIn: openSignIn, openSignUp: openSig
             <div className="mx-auto inline-grid grid-cols-2 justify-center gap-6 space-y-4 sm:space-y-0 md:gap-8">
               <div className="group relative h-20" onMouseEnter={handleMouseEnterRegister}>
                 <button
-                  className="logo-bold hover:bg-main-500 relative z-0 h-14 rounded-full bg-black px-5 py-3 text-base text-white shadow-lg shadow-gray-400 hover:shadow-xl sm:text-lg md:h-15"
+                  className="logo-bold hover:bg-main-500 relative z-0 h-14 rounded-full bg-black px-5 py-3 text-base text-white shadow-lg shadow-gray-700 hover:shadow-xl sm:text-lg md:h-15"
                   onClick={() => openSignUp()}>
                   Register
                 </button>
@@ -78,7 +78,7 @@ const Hero: React.FC<HeroProps> = ({ openSignIn: openSignIn, openSignUp: openSig
               </div>
               <div className="group relative h-20" onMouseEnter={handleMouseEnterSign}>
                 <button
-                  className="logo-bold b-main-200 text-main-500 hover:bg-main-500 bg-main-50 relative z-0 h-14 rounded-full border-3 border-gray-500 px-5 py-3 text-base shadow-lg shadow-gray-400 hover:border-transparent hover:text-white hover:shadow-xl sm:text-lg md:h-15"
+                  className="logo-bold b-main-200 text-main-500 hover:bg-main-500 bg-main-50 relative z-0 h-14 rounded-full border-3 border-gray-500 px-5 py-3 text-base shadow-lg shadow-gray-700 hover:border-transparent hover:text-white hover:shadow-xl sm:text-lg md:h-15"
                   onClick={() => openSignIn()}>
                   Sign In
                 </button>
@@ -96,18 +96,18 @@ const Hero: React.FC<HeroProps> = ({ openSignIn: openSignIn, openSignUp: openSig
             </div>
           </div>
         </div>
-        <div className="relative">
+        {/* <div className="relative">
           <div className="aspect-w-16 overflow-hidden rounded-lg shadow-xl">
             <img
-              src="src/assets/pegasus-dungeon-soup.png"
+              src="src/assets/dinglemire-dungeon-soup.gif"
               alt="filegremlin dashboard"
               className="h-full w-full object-cover"
-            />
+            
           </div>
           <div className="absolute inset-0 rounded-lg bg-linear-to-t from-black opacity-10"></div>
-        </div>
+        </div>*/}
         <div className="mt-8 text-center">
-          <p className="mt-4 pb-4 text-base text-gray-500">
+          <p className="mt-4 pb-4 text-base text-gray-100">
             All your files are encrypted and stored securely with enterprise-grade security protocols.
           </p>
         </div>
